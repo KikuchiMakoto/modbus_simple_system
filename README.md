@@ -2,10 +2,10 @@
 
 材料試験（ロードセル・変位計などのアナログ計測、アナログ出力制御）向けに作った、自作 Modbus RTU 計測・制御システムです。
 
-「基板を作る」「ファームウェアを書き込む」「ブラウザで計測する」の3つのリポジトリに分かれているため、このリポジトリでは**全体像と、迷わないための手順**をまとめています。
+「基板」「ファームウェア」「ブラウザ計測」の3リポジトリ構成なので、このリポジトリでは**全体像と最短手順**をまとめています。
 
-> 🔰 **Arduinoって何？という方へ**
-> このプロジェクトは、電子工作・組み込みプログラミングが初めてでも進められるように作られています。わからない用語や詰まった箇所が出てきたら、その都度 ChatGPT や Claude などの生成AIにエラーメッセージや状況をそのまま貼り付けて聞いてみてください。「Arduino IDEって何？」「このエラーどういう意味？」レベルの質問からで大丈夫です。本READMEも、各ステップでつまずきやすいポイントに注記を入れています。
+> 🔰 **Arduino初心者でも進められます。**
+> 詰まったら、エラーメッセージをそのまま生成AIに貼って確認してください。READMEにも要点だけ注記しています。
 
 ## これは何をするもの？
 
@@ -79,24 +79,24 @@
 
 ### ステップ2：ファームウェアを書き込む
 
-Arduino Nano R4 をPCにUSB接続した状態で、**Windowsの場合は下のコマンド1行をコピーして PowerShell に貼り付けて実行する**だけで書き込みが完了します（[uv](https://astral.sh/uv/install.ps1) など最近よくあるインストーラーと同じ方式です）。
+Arduino Nano R4 をUSB接続した状態で、**Windowsは下の1行を PowerShell で実行**すれば書き込みできます。
 
 ```powershell
 powershell -ExecutionPolicy Bypass -c "irm https://raw.githubusercontent.com/KikuchiMakoto/modbus_simple_system/main/scripts/flash-firmware-windows.ps1 | iex"
 ```
 
-このコマンドがやっていること：
+実行内容：
 
 1. `winget` で Arduino CLI を自動インストール（すでに入っていればスキップ）
 2. Arduino Nano R4 用のボードコアを自動インストール
 3. [modbus_simple_firmware の最新Release](https://github.com/KikuchiMakoto/modbus_simple_firmware/releases) から `ArduinoNanoR4.bin` を `%TEMP%` にダウンロード
 4. 接続されているCOMポートを検出し、書き込みを実行
 
-> 🔰 「よくわからないコマンドをそのまま実行するのは不安」という方向けに、実行前に中身を確認したい場合は [scripts/flash-firmware-windows.ps1](./scripts/flash-firmware-windows.ps1) を直接開いて読んでから、その内容をコピーしてPowerShellに貼り付けて実行しても同じ結果になります（貼り付け実行なら `.ps1` ファイルの実行ポリシー制限にも引っかかりません）。
+> 🔰 不安な場合は [scripts/flash-firmware-windows.ps1](./scripts/flash-firmware-windows.ps1) を先に確認してから、内容を貼り付け実行してください（同じ結果になります）。
 
-Mac/Linuxの場合や、ソースコードから自分でビルドしたい場合は、[Arduino IDE](https://www.arduino.cc/en/software) をインストールし、リポジトリのREADMEに記載のライブラリ（HX711 Arduino Library / ADS1115_WE / DFRobot_GP8403 / ModbusRTUSlave）を「ライブラリマネージャ」から追加してから、ボードに「Arduino Nano R4」を選択して書き込んでください。
+Mac/Linuxやソースからビルドする場合は、[Arduino IDE](https://www.arduino.cc/en/software) を入れ、README記載のライブラリを追加して「Arduino Nano R4」へ書き込んでください。
 
-> 🔰 コマンドの意味やエラーが分からないときは、そのままメッセージをコピーして生成AIに聞いてみてください。「winget が見つからない」と言われた場合は、Microsoft Storeで「アプリ インストーラー」を確認する必要がある、といったところまで一緒に教えてくれます。
+> 🔰 エラーが出たら、メッセージをそのまま生成AIに貼るのが早いです（例: `winget` 未検出なら「アプリ インストーラー」の確認）。
 
 ### ステップ3：計測アプリを開く
 
@@ -104,13 +104,13 @@ Mac/Linuxの場合や、ソースコードから自分でビルドしたい場�
 
 👉 **https://kikuchimakoto.github.io/modbus_simple_logger/**
 
-（開発者向けに、ソースコードから起動する方法も [modbus_simple_logger の README](https://github.com/KikuchiMakoto/modbus_simple_logger) に記載されています）
+（開発者向けのソース起動手順は [modbus_simple_logger の README](https://github.com/KikuchiMakoto/modbus_simple_logger) を参照）
 
 1. Arduino Nano R4 をPCにUSB接続する
 2. 上記アプリを開き、「接続」ボタンからシリアルポートを選択する（初回はブラウザがポート選択のダイアログを出します）
 3. 接続できると、AI0〜AI15のリアルタイム値がグラフに表示されます
 
-> 🔰 「シリアルポートが出てこない」「接続に失敗する」場合は、Web Serial に対応したブラウザ（Chrome / Edge）を使っているか、他のソフトがそのポートを使っていないかを確認してください。エラーメッセージが出たら、そのまま生成AIに貼り付けて聞くのが近道です。
+> 🔰 ポートが出ない/接続失敗時は、Chrome/Edge利用とポート占有の有無を確認。エラーはそのまま生成AIに貼るのが近道です。
 
 ### ステップ4：使ってみる
 
@@ -165,9 +165,9 @@ Mac/Linuxの場合や、ソースコードから自分でビルドしたい場�
 
 ## 困ったときは
 
-- 各リポジトリのREADME・Wikiに手順や注意点がまとまっています
-- エラーメッセージや「うまくいかない状況」は、そのまま生成AI（ChatGPT／Claudeなど）に貼り付けて質問すると、原因の切り分けが早くなります
-- Issueを立てるほどでもない疑問も、まずは生成AIに壁打ちしてみるのがおすすめです
+- まずは各リポジトリのREADME・Wikiを確認
+- エラーや状況は、そのまま生成AIに貼ると切り分けが早いです
+- Issue前の軽い確認にも生成AIが有効です
 
 ## ライセンス
 

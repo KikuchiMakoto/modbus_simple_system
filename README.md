@@ -79,14 +79,24 @@
 
 ### ステップ2：ファームウェアを書き込む
 
-一番手軽なのは、**ビルド済みファイルをそのまま使う方法**です。
+Arduino Nano R4 をPCにUSB接続した状態で、**Windowsの場合は下のコマンド1行をコピーして PowerShell に貼り付けて実行する**だけで書き込みが完了します（[uv](https://astral.sh/uv/install.ps1) など最近よくあるインストーラーと同じ方式です）。
 
-1. [modbus_simple_firmware の Releases](https://github.com/KikuchiMakoto/modbus_simple_firmware/releases) を開き、最新のビルド（`ArduinoNanoR4.hex` などのファイルが付いているもの）をダウンロードします。
-2. Arduino Nano R4 用の書き込みツールで書き込みます（Arduino IDEの使い方が分からない場合は「Arduino Nano R4 ファームウェア 書き込み方法」で検索するか、生成AIに聞きながら進めてください）。
+```powershell
+powershell -ExecutionPolicy Bypass -c "irm https://raw.githubusercontent.com/KikuchiMakoto/modbus_simple_system/main/scripts/flash-firmware-windows.ps1 | iex"
+```
 
-自分でソースコードから書き込みたい場合は、[Arduino IDE](https://www.arduino.cc/en/software) をインストールし、リポジトリのREADMEに記載のライブラリ（HX711 Arduino Library / ADS1115_WE / DFRobot_GP8403 / ModbusRTUSlave）を「ライブラリマネージャ」から追加してから、ボードに「Arduino Nano R4」を選択して書き込みます。
+このコマンドがやっていること：
 
-> 🔰 Arduino IDEはこのプロジェクトで初めて触るという方も多いはずです。「Arduino IDE インストール方法」「ライブラリマネージャの使い方」など、知らない単語が出るたびに一つずつ生成AIに聞きながら進めれば迷わず完了できます。
+1. `winget` で Arduino CLI を自動インストール（すでに入っていればスキップ）
+2. Arduino Nano R4 用のボードコアを自動インストール
+3. [modbus_simple_firmware の最新Release](https://github.com/KikuchiMakoto/modbus_simple_firmware/releases) から `ArduinoNanoR4.bin` を `%TEMP%` にダウンロード
+4. 接続されているCOMポートを検出し、書き込みを実行
+
+> 🔰 「よくわからないコマンドをそのまま実行するのは不安」という方向けに、実行前に中身を確認したい場合は [scripts/flash-firmware-windows.ps1](./scripts/flash-firmware-windows.ps1) を直接開いて読んでから、その内容をコピーしてPowerShellに貼り付けて実行しても同じ結果になります（貼り付け実行なら `.ps1` ファイルの実行ポリシー制限にも引っかかりません）。
+
+Mac/Linuxの場合や、ソースコードから自分でビルドしたい場合は、[Arduino IDE](https://www.arduino.cc/en/software) をインストールし、リポジトリのREADMEに記載のライブラリ（HX711 Arduino Library / ADS1115_WE / DFRobot_GP8403 / ModbusRTUSlave）を「ライブラリマネージャ」から追加してから、ボードに「Arduino Nano R4」を選択して書き込んでください。
+
+> 🔰 コマンドの意味やエラーが分からないときは、そのままメッセージをコピーして生成AIに聞いてみてください。「winget が見つからない」と言われた場合は、Microsoft Storeで「アプリ インストーラー」を確認する必要がある、といったところまで一緒に教えてくれます。
 
 ### ステップ3：計測アプリを開く
 

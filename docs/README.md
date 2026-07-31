@@ -119,6 +119,23 @@ Mac/Linuxやソースからビルドする場合は、[Arduino IDE](https://www.
 - **グラフ表示・保存**：Plotly.jsのグラフでリアルタイム表示しつつ、TSVファイルに保存できます
 - **Pythonでの自動制御（応用）**：アプリ内蔵のPython実行環境（Pyodide）でスクリプトを書き、`set_ao()` でアナログ出力を制御したり、Tareを自動実行したりできます。ブラウザ内で完結するため、Pythonを別途インストールする必要はありません
 
+## 用語・部品の解説（初心者向け）
+
+分からない言葉が出てきたら、ここから読んでください。1ページ1テーマ・数分で読めます。
+
+| ページ | 内容 |
+| --- | --- |
+| [Arduino](./Arduino.md) | Arduinoって何？ プログラムの書き方と書き込み方 |
+| [Arduino Nano R4](./ArduinoNanoR4.md) | 本システムで使うマイコンボード |
+| [Modbus RTU](./ModbusRTU.md) | PCと基板の通信ルール、レジスタ割り当て |
+| [ロードセル](./LoadCell.md) | 力・重さを測るセンサーの基礎 |
+| [HX711](./HX711.md) | ロードセル用アンプ内蔵ADC（AI0〜7） |
+| [ADS1115](./ADS1115.md) | 汎用の電圧入力ADC（AI8〜15） |
+| [GP8403](./GP8403.md) | 0〜10Vのアナログ出力DAC（AO0〜7） |
+| [I2C](./I2C.md) | IC同士をつなぐ2線通信。アドレス設定の話 |
+| [キャリブレーション](./Calibration.md) | 生データを N・kg に変換する。Tareの使い方 |
+| [困ったときは](./Troubleshooting.md) | 症状別チェックリスト |
+
 ## もう少し詳しく（技術情報）
 
 <details>
@@ -165,6 +182,7 @@ Mac/Linuxやソースからビルドする場合は、[Arduino IDE](https://www.
 
 ## 困ったときは
 
+- 症状別のチェックリストは **[Troubleshooting](./Troubleshooting.md)** にまとめています
 - まずは各リポジトリのREADME・Wikiを確認
 - エラーや状況は、そのまま生成AIに貼ると切り分けが早いです
 - Issue前の軽い確認にも生成AIが有効です

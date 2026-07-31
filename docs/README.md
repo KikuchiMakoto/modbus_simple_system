@@ -125,7 +125,7 @@ Mac/Linuxやソースからビルドする場合は、[Arduino IDE](https://www.
 
 | ページ | 内容 |
 | --- | --- |
-| [Arduino](./Arduino.md) | Arduinoって何？ プログラムの書き方と書き込み方 |
+| [Arduino](./Arduino.md) | Arduinoって何？ スケッチ・ライブラリ・ファームウェアという言葉 |
 | [Arduino Nano R4](./ArduinoNanoR4.md) | 本システムで使うマイコンボード |
 | [USB CDC ACM](./USBCDC.md) | 変換ICとの違い、書き込み時のリセットの仕掛け |
 | [Modbus RTU](./ModbusRTU.md) | PCと基板の通信ルール、レジスタ割り当て、RTU/ASCII/TCPの違い |
@@ -138,6 +138,8 @@ Mac/Linuxやソースからビルドする場合は、[Arduino IDE](https://www.
 | [ADS1115](./ADS1115.md) | 汎用の電圧入力ADC（AI8〜15） |
 | [GP8403](./GP8403.md) | 0〜10Vのアナログ出力DAC（AO0〜7） |
 | [I2C](./I2C.md) | IC同士をつなぐ2線通信。アドレス設定の話 |
+| [シールドとアース](./Shield.md) | 繋げば良くなるとは限らない。片側接地の原則 |
+| [同軸・BNC・50Ω](./Coax.md) | 計測器のコネクタとケーブル。50Ωは抵抗値ではない |
 | [キャリブレーション](./Calibration.md) | 生データを N・kg に変換する。Tareの使い方 |
 | [困ったときは](./Troubleshooting.md) | 症状別チェックリスト |
 

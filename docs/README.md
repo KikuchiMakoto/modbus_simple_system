@@ -129,6 +129,9 @@ Mac/Linuxやソースからビルドする場合は、[Arduino IDE](https://www.
 | [Arduino Nano R4](./ArduinoNanoR4.md) | 本システムで使うマイコンボード |
 | [Modbus RTU](./ModbusRTU.md) | PCと基板の通信ルール、レジスタ割り当て |
 | [ロードセル](./LoadCell.md) | 力・重さを測るセンサーの基礎 |
+| [ひずみゲージとブリッジ](./StrainGauge.md) | μST（マイクロストレイン）、フルブリッジ、2.0mV/Vの正体 |
+| [DC励起とAC励起](./Excitation.md) | ドリフトの理由と、搬送波型（AC励起）が強い場面 |
+| [LVDT](./LVDT.md) | 差動トランス式変位計。本システムへのつなぎ方 |
 | [HX711](./HX711.md) | ロードセル用アンプ内蔵ADC（AI0〜7） |
 | [ADS1115](./ADS1115.md) | 汎用の電圧入力ADC（AI8〜15） |
 | [GP8403](./GP8403.md) | 0〜10Vのアナログ出力DAC（AO0〜7） |

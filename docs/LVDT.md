@@ -51,3 +51,7 @@ ADS1115の入力は **0〜5.3V、マイナス不可**。ここが最大の関門
 - コアとボビンが擦れていないか確認。接触すると摩耗し、値も暴れます
 - 変位が「向きだけ逆」なら、[校正](./Calibration.md)の係数の符号で合わせられます
 - 交流励起の背景は [Excitation.md](./Excitation.md) を参照
+
+## 関連ページ
+
+[4〜20mAの受け方](./CurrentLoop.md) ／ [ADS1115](./ADS1115.md) ／ [DC励起とAC励起](./Excitation.md) ／ [同軸・BNC・50Ω](./Coax.md) ／ [AI/AO/DI/DO](./Signals.md)

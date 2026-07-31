@@ -40,3 +40,7 @@
 3. それでも残る問題は Issue へ
 
 > 🔰 「どこまで動いて、どこから動かないか」を先に切り分けると、質問もIssueも一気に解決しやすくなります。
+
+## 関連ページ
+
+[はじめてガイド](./GettingStarted.md) ／ [Arduino](./Arduino.md) ／ [シールドとアース](./Shield.md) ／ [キャリブレーション](./Calibration.md) ／ [仕様まとめ](./Specs.md)

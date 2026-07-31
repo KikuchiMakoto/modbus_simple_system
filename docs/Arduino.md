@@ -65,10 +65,14 @@ void loop() {    // 以後ずっと繰り返し実行
 2. IDEで「ボード」＝ Arduino Nano R4、「ポート」＝ 表示されたCOMポートを選択
 3. 「→」（書き込み）ボタンを押す
 
-ビルド済みファイル（`.bin`）を書き込むだけなら、[README](./README.md) のPowerShell 1行で終わります。
+ビルド済みファイル（`.bin`）を書き込むだけなら、[はじめてガイド](./GettingStarted.md) のPowerShell 1行で終わります。
 
 ## つまずいたら
 
 - ポートが出ない → USBケーブルが「充電専用」でないか確認（データ線のあるものが必要）
 - 書き込み失敗 → 他のソフトがCOMポートを開いていないか確認。書き込み時のリセットの仕組みは [USBCDC.md](./USBCDC.md)
 - 直らない → エラーメッセージをそのまま生成AIに貼るのが最短です
+
+## 関連ページ
+
+[Arduino Nano R4](./ArduinoNanoR4.md) ／ [USB CDC ACM](./USBCDC.md) ／ [はじめてガイド](./GettingStarted.md) ／ [仕様まとめ](./Specs.md)

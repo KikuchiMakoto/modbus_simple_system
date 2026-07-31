@@ -32,3 +32,7 @@ Modbus RTUの「スレーブ（ID=1）」として動きます。
 - 5V品ですが、**アナログ入力に5.3Vを超える電圧を入れない**こと（→ [ADS1115.md](./ADS1115.md)）
 - 書き込み時の「ボード」選択は必ず **Arduino Nano R4**。UNO R4やNano Every用のビルドは動きません
 - リセットが掛からない＝計測中にアプリを開き直しても値が飛びません。従来Nanoからの乗り換え理由はここが大きいです（仕組みは [USBCDC.md](./USBCDC.md)）
+
+## 関連ページ
+
+[Arduino](./Arduino.md) ／ [USB CDC ACM](./USBCDC.md) ／ [Modbus RTU](./ModbusRTU.md) ／ [基板とKiCAD](./PCB.md)

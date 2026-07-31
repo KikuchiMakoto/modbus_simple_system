@@ -76,3 +76,7 @@ USB経由なので、実際は [USB CDC](./USBCDC.md) の上をRTUのフレー�
 - 1本の線に同じIDのスレーブを2台つなぐと壊れます（本システムは1台なので気にしなくてOK）
 - 応答がない＝ボーレート・ID・ポートのどれかが違う、が定番の原因です
 - COMポートは同時に1つのソフトしか開けません。Arduino IDEのシリアルモニタを閉じてから計測アプリを開いてください
+
+## 関連ページ
+
+[USB CDC ACM](./USBCDC.md) ／ [AI/AO/DI/DO](./Signals.md) ／ [Arduino Nano R4](./ArduinoNanoR4.md) ／ [仕様まとめ](./Specs.md)

@@ -28,3 +28,7 @@ HX711のゲイン128で測れるのは ±3.906mV/V まで。2.0mV/V のロード
 - 温度でゼロ点がゆっくり動きます。測定前にTare（0点補正）を取る習慣を（理由は [Excitation.md](./Excitation.md)）
 - 出力は力に比例しますが、**何kg／何Nかは校正しないと分かりません**（→ [Calibration.md](./Calibration.md)）
 - 変位計など他の電圧出力センサーは、HX711ではなく [ADS1115](./ADS1115.md) 側（AI8〜15）につなぎます（→ [LVDT.md](./LVDT.md)）
+
+## 関連ページ
+
+[ひずみゲージとブリッジ](./StrainGauge.md) ／ [HX711](./HX711.md) ／ [DC励起とAC励起](./Excitation.md) ／ [キャリブレーション](./Calibration.md)

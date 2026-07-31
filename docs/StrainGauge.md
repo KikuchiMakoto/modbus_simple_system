@@ -83,3 +83,7 @@ Vout / Vin = (1/4) × (Δ1 − Δ2 + Δ3 − Δ4)
 - ブリッジ抵抗は 350Ω が主流。120Ω は電流が増えて自己発熱しやすくなります
 - 出力は μV〜mV の世界。配線・ノイズ対策が精度を決めます（→ [Excitation.md](./Excitation.md) / [Shield.md](./Shield.md)）
 - 励起電圧は高いほど良いわけではありません。**必ずセンサーの仕様書を確認**してください（→ [Excitation.md](./Excitation.md)）
+
+## 関連ページ
+
+[ロードセル](./LoadCell.md) ／ [HX711](./HX711.md) ／ [DC励起とAC励起](./Excitation.md) ／ [キャリブレーション](./Calibration.md)

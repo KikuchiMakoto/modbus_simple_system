@@ -40,12 +40,43 @@
 ## 発注の流れ
 
 1. [modbus_simple_pcb の Releases](https://github.com/KikuchiMakoto/modbus_simple_pcb/releases) から `Gerber.zip` をダウンロード
-2. JLCPCB や PCBWay にアップロード
+2. 基板製造業者（下記）にアップロード
 3. 枚数・板厚・色を選んで注文（最小ロットで数百円〜、1〜2週間程度）
-4. 部品は [Wiki の部品リスト（BOM）](https://github.com/KikuchiMakoto/modbus_simple_pcb/wiki) を見て、秋月電子・Amazon・SwitchScience などで購入
+4. 電子部品は主に**秋月電子通商**で揃います。足りないものはAmazonやマルツで補います（詳しくは[BOM](https://github.com/KikuchiMakoto/modbus_simple_pcb/wiki)を参照）
 5. 自分ではんだ付け
 
 > **BOM**＝Bill of Materials（部品表）。型番と個数の一覧です。
+
+## 基板の発注先
+
+`Gerber.zip` はどの業者でも読める共通形式なので、好きなところに発注できます。よく使われるのは次のあたりです。
+
+| 業者 | 拠点 |
+| --- | --- |
+| JLCPCB | 中国 |
+| PCBWay | 中国 |
+| FusionPCB（Seeed Studio） | 中国 |
+| Seeed Studio | 中国 |
+| Elecrow | 中国 |
+| PCBGoGo | 中国 |
+| P板.com | 日本 |
+| ユニクラフト | 日本 |
+| マルツ | 日本 |
+
+**中国系の業者**（JLCPCB・PCBWay・FusionPCB・Seeed Studio・Elecrow・PCBGoGoなど）は総じて安く、最小ロットも数百円〜。ただし国際便のため到着まで1〜2週間程度かかります。今回のリポジトリは16ch分の基板で難しい仕様ではないので、はじめてならこのあたりが無難です。
+
+**日本国内の業者**（P板.com・ユニクラフト・マルツなど）は単価は上がりますが、日本語サポートと国内発送の早さがメリットです。急ぎのときや、海外発注に不安があるときに向いています。
+
+台湾やアメリカの業者もありますが、趣味・小規模用途では中国系か日本国内かの二択で困らないはずです。
+
+## 組み立てで使う電子部品
+
+抵抗・コンデンサ・ICソケットなど、はんだ付けに必要な電子部品は**ほぼ秋月電子通商で揃います**。品揃えと価格のバランスが良く、店舗（秋葉原）でもオンラインでも買えます。
+
+- 秋月電子で見つからない・在庫切れのものは**Amazon**で代替品を探すのが早いです
+- ケーブルやコネクタ、工具類は**マルツ**（オンライン・店舗）でも扱いがあります
+
+詳しい型番・個数は [Wiki の部品リスト（BOM）](https://github.com/KikuchiMakoto/modbus_simple_pcb/wiki) を参照してください。
 
 ## 組み立てで失敗しやすいところ
 

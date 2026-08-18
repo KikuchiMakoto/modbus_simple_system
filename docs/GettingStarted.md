@@ -32,7 +32,7 @@
 Arduino Nano R4 をUSB接続し、**Windowsなら PowerShell でこの1行**だけです。
 
 ```powershell
-powershell -ExecutionPolicy Bypass -c "irm https://raw.githubusercontent.com/KikuchiMakoto/modbus_simple_system/main/scripts/flash-firmware-windows.ps1 | iex"
+irm "https://raw.githubusercontent.com/KikuchiMakoto/modbus_simple_system/main/scripts/flash-firmware-windows.ps1" | iex
 ```
 
 やっていること：

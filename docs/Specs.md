@@ -7,8 +7,8 @@
 | 種別 | ch | デバイス | 範囲 |
 | --- | --- | --- | --- |
 | **AI0〜7** | 8 | [HX711](./HX711.md)×8 | ロードセル用（±3.906mV/V @ゲイン128） |
-| **AI8〜15** | 8 | [ADS1115](./ADS1115.md)×2 | 汎用電圧入力（0〜5.3V） |
-| **AO0〜7** | 8 | [GP8403](./GP8403.md)×4 | 0〜10V出力 |
+| **AI8〜15** | 8 | [ADS1115](./ADS1115.md)×2（4ch/IC） | 汎用電圧入力（0〜5.3V） |
+| **AO0〜7** | 8 | [GP8403](./GP8403.md)×4（2ch/IC） | 0〜10V出力 |
 
 種別の呼び方は [Signals.md](./Signals.md) を参照。
 
@@ -26,13 +26,13 @@
 ## ファームウェア（modbus_simple_firmware）
 
 - 対応ボード：[Arduino Nano R4](./ArduinoNanoR4.md)
-- 使用ライブラリ：HX711 Arduino Library / ADS1115_WE / DFRobot_GP8403 / ModbusRTUSlave
+- 使用ライブラリ：HX711 Arduino Library 0.7.5 / ADS1115_WE 1.5.7 / DFRobot_GP8403 1.0.0 / ModbusRTUSlave 3.1.2
 - Releasesにコミットごとの自動ビルド（`.bin` / `.hex` / `.elf`）を公開
 
 ## 計測アプリ（modbus_simple_logger）
 
 - Web Serial API で接続（非対応環境ではWebUSBにフォールバック）
-- ポーリング間隔 200ms〜5分
+- ポーリング 100ms固定（チャートも同じ周期）。TSVの保存レートは200ms〜30分で独立して変更可（→ [Logger.md](./Logger.md)）
 - チャネルごとの多項式キャリブレーションとワンタッチTare（→ [Calibration.md](./Calibration.md)）
 - Plotly.js のリアルタイムチャート、File System Access API による TSV ストリーミング保存
 - PWA対応でオフライン動作可能
@@ -55,4 +55,4 @@
 
 ## 関連ページ
 
-[Signals](./Signals.md) ／ [ModbusRTU](./ModbusRTU.md) ／ [PCB](./PCB.md) ／ [はじめてガイド](./GettingStarted.md)
+[Signals](./Signals.md) ／ [ModbusRTU](./ModbusRTU.md) ／ [PCB](./PCB.md) ／ [はじめてガイド](./GettingStarted.md) ／ [計測アプリ](./Logger.md)

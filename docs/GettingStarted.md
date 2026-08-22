@@ -14,7 +14,7 @@
 
 ## ステップ0：用意するもの
 
-- Windows / Mac のPC（**Chrome または Edge** が必要。Safari・Firefoxは非対応）
+- **Chrome または Edge が動くPC**（Windows / Mac / Linux / Android。Safari・Firefoxは非対応）
 - [Arduino Nano R4](./ArduinoNanoR4.md)
 - USBケーブル（**充電専用でないもの**）
 - （基板を自作するなら）はんだごて一式
@@ -48,7 +48,7 @@ Mac/Linuxや、ソースから書き込む場合は [Arduino IDE](https://www.ar
 
 ## ステップ3：じゃあ動かしてみよう（modbus_simple_logger）
 
-インストール不要。**Chrome / Edge** で開くだけです。
+インストール不要。**Chrome / Edge** で開くだけです。詳しい使い方は **[Logger.md](./Logger.md)** へ。
 
 👉 **https://kikuchimakoto.github.io/modbus_simple_logger/**
 
@@ -62,8 +62,8 @@ Mac/Linuxや、ソースから書き込む場合は [Arduino IDE](https://www.ar
 | --- | --- |
 | **校正** | 生データを N・mm に変換する式を設定（→ [Calibration.md](./Calibration.md)） |
 | **Tare** | ボタン一つでその時点を0点に |
-| **記録** | リアルタイムグラフ＋TSV保存 |
-| **自動制御** | 内蔵Python（Pyodide）で `set_ao()` などを実行。**インストール不要** |
+| **記録** | リアルタイムグラフ＋TSV保存（→ [Logger.md](./Logger.md)） |
+| **自動制御** | 内蔵Python（Pyodide）で `SetAo()` などを実行。**インストール不要** |
 
 ## うまくいかないときは
 
@@ -71,4 +71,4 @@ Mac/Linuxや、ソースから書き込む場合は [Arduino IDE](https://www.ar
 
 ## 関連ページ
 
-[基板とKiCAD](./PCB.md) ／ [Arduino](./Arduino.md) ／ [キャリブレーション](./Calibration.md) ／ [困ったときは](./Troubleshooting.md) ／ [仕様まとめ](./Specs.md)
+[基板とKiCAD](./PCB.md) ／ [Arduino](./Arduino.md) ／ [計測アプリ](./Logger.md) ／ [キャリブレーション](./Calibration.md) ／ [困ったときは](./Troubleshooting.md) ／ [仕様まとめ](./Specs.md)

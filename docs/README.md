@@ -20,12 +20,12 @@
 | --- | --- | --- | --- |
 | ① | [pcb](https://github.com/KikuchiMakoto/modbus_simple_pcb) | 基板発注と電子部品の買い物 | [PCB.md](./PCB.md) |
 | ② | [firmware](https://github.com/KikuchiMakoto/modbus_simple_firmware) | 組み立てたら書き込もう | [Arduino.md](./Arduino.md) |
-| ③ | [logger](https://github.com/KikuchiMakoto/modbus_simple_logger) | じゃあ動かしてみよう | [GettingStarted.md](./GettingStarted.md) |
+| ③ | [logger](https://github.com/KikuchiMakoto/modbus_simple_logger) | じゃあ動かしてみよう | [Logger.md](./Logger.md) |
 
 ## できること
 
 - **AI16ch / AO8ch** の計測と制御（→ [Signals.md](./Signals.md)）
-- リアルタイムグラフとTSV保存
+- リアルタイムグラフとTSV保存（→ [Logger.md](./Logger.md)）
 - チャネルごとの校正・Tare（→ [Calibration.md](./Calibration.md)）
 - ブラウザ内蔵Pythonで自動制御（追加インストール不要）
 
@@ -34,7 +34,7 @@
 ## ドキュメント
 
 **はじめる**
-[はじめてガイド](./GettingStarted.md) ／ [基板・KiCAD・ガーバー](./PCB.md) ／ [Arduino](./Arduino.md) ／ [困ったときは](./Troubleshooting.md)
+[はじめてガイド](./GettingStarted.md) ／ [基板・KiCAD・ガーバー](./PCB.md) ／ [Arduino](./Arduino.md) ／ [計測アプリ](./Logger.md) ／ [困ったときは](./Troubleshooting.md)
 
 **測る仕組み**
 [ロードセル](./LoadCell.md) ／ [ひずみゲージとブリッジ](./StrainGauge.md) ／ [DC励起とAC励起](./Excitation.md) ／ [LVDT](./LVDT.md) ／ [キャリブレーション](./Calibration.md)

@@ -16,6 +16,12 @@
 - 書き込み時のボード選択が **Arduino Nano R4** になっていたか
 - 通信設定は 38400bps / スレーブID 1（→ [ModbusRTU.md](./ModbusRTU.md)）
 
+## 計測アプリまわり
+
+- ポートが突然消えた → ファームウェア停止・リセットのサインです（→ [USBCDC.md](./USBCDC.md)）
+- 校正値が消えた → ブラウザのサイトデータ削除が原因のことが多いです。JSON書き出しでバックアップを（→ [Logger.md](./Logger.md)）
+- ScriptRunnerのAPI名はPascalCase（`SetAo()`）。snake_caseでは動きません（→ [Logger.md](./Logger.md)）
+
 ## 値がおかしい
 
 | 症状 | 疑うところ |
@@ -45,9 +51,8 @@
 1. エラーメッセージ・症状・写真を、そのまま生成AIに貼って切り分ける
 2. 各リポジトリのREADMEとWikiを確認する
 3. それでも残る問題は Issue へ
-
 > 🔰 「どこまで動いて、どこから動かないか」を先に切り分けると、質問もIssueも一気に解決しやすくなります。
 
 ## 関連ページ
 
-[はじめてガイド](./GettingStarted.md) ／ [Arduino](./Arduino.md) ／ [シールドとアース](./Shield.md) ／ [キャリブレーション](./Calibration.md) ／ [ひずみゲージとブリッジ](./StrainGauge.md) ／ [仕様まとめ](./Specs.md)
+[はじめてガイド](./GettingStarted.md) ／ [Arduino](./Arduino.md) ／ [計測アプリ](./Logger.md) ／ [シールドとアース](./Shield.md) ／ [キャリブレーション](./Calibration.md) ／ [ひずみゲージとブリッジ](./StrainGauge.md) ／ [仕様まとめ](./Specs.md)

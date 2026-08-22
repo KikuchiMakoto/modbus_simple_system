@@ -19,7 +19,7 @@ Web Serial API などの新しいAPIを使うため、**Chromium系ブラウザ�
 | ブラウザ | 可否 |
 | --- | --- |
 | Chrome / Edge（89以降） | ○ |
-| Android Chrome | ○（WebUSBで接続） |
+| Android Chrome | ○ |
 | Safari / Firefox | ×（非対応） |
 
 > 💡 Windows限定ですが、ブラウザ不要の**単一EXE版**を [Releases](https://github.com/KikuchiMakoto/modbus_simple_logger/releases) で公開しています。

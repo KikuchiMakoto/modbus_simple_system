@@ -17,8 +17,8 @@
 | 項目 | 値 |
 | --- | --- |
 | プロトコル | [Modbus RTU](./ModbusRTU.md) |
-| 物理層 | USB CDCシリアル（→ [USBCDC.md](./USBCDC.md)） |
-| ボーレート | 38400bps（CDCなので実効速度の上限ではない） |
+| 物理層 | USB CDCシリアル（→ [USBCDC.md](./USBCDC.md)。CDCなのでボーレートは実効速度の上限ではない） |
+| ボーレート | 38400bps（表記上の値。実効速度はUSB側で決まる） |
 | スレーブID | 1 |
 | 入力レジスタ 0〜15 | AI0〜15（int16_t、読み取り専用） |
 | ホールディングレジスタ 0〜7 | AO0〜7（mV単位、uint16_t） |
@@ -51,7 +51,7 @@
 | --- | --- | --- |
 | [pcb](https://github.com/KikuchiMakoto/modbus_simple_pcb/releases) | v1.1 | `Gerber.zip`、`Schematic.pdf` |
 | [firmware](https://github.com/KikuchiMakoto/modbus_simple_firmware/releases) | コミット単位 | `.bin` / `.hex` / `.elf` |
-| [logger](https://github.com/KikuchiMakoto/modbus_simple_logger) | — | GitHub Pagesで常時最新 |
+| [logger](https://github.com/KikuchiMakoto/modbus_simple_logger/releases) | 常時最新 | Web版（GitHub Pages）、Windows用 `modbus_simple_logger.exe` |
 
 ## 関連ページ
 

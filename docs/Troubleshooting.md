@@ -18,9 +18,17 @@
 
 ## 計測アプリまわり
 
-- ポートが突然消えた → ファームウェア停止・リセットのサインです（→ [USBCDC.md](./USBCDC.md)）
-- 校正値が消えた → ブラウザのサイトデータ削除が原因のことが多いです。JSON書き出しでバックアップを（→ [Logger.md](./Logger.md)）
-- ScriptRunnerのAPI名はPascalCase（`SetAo()`）。snake_caseでは動きません（→ [Logger.md](./Logger.md)）
+**ポートが突然消えた**
+
+- ファームウェアの停止・リセットのサインです（→ [USBCDC.md](./USBCDC.md)）
+
+**校正値が消えた**
+
+- ブラウザのサイトデータ削除が原因のことが多いです。JSON書き出しでバックアップを（→ [Logger.md](./Logger.md)）
+
+**ScriptRunnerが動かない**
+
+- API名はPascalCase（`SetAo()`）です。snake_caseでは動きません（→ [Logger.md](./Logger.md)）
 
 ## 値がおかしい
 
@@ -51,6 +59,7 @@
 1. エラーメッセージ・症状・写真を、そのまま生成AIに貼って切り分ける
 2. 各リポジトリのREADMEとWikiを確認する
 3. それでも残る問題は Issue へ
+
 > 🔰 「どこまで動いて、どこから動かないか」を先に切り分けると、質問もIssueも一気に解決しやすくなります。
 
 ## 関連ページ

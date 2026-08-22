@@ -7,6 +7,10 @@
 
 > 🔰 **はじめての方は [はじめてガイド](./GettingStarted.md) へ。** 詰まったら [困ったときは](./Troubleshooting.md)。
 
+## このシステムの原点
+
+東京大学の地盤研で三軸試験機向けに使われてきた計測・制御システム **[DigitShow 系](https://github.com/mkt-kuno/DigitShowSystem)** が原点です（Windows98時代の王林氏作 DigitShow → Windows2000時代の本多剛氏作 DigitShowBasic）。PCから拡張スロットが消えたため、Interface/CONTECのAD/DAボードを**USB接続の自作Modbusボードに置き換えた、その趣味版**が本システムです。
+
 ## 全体像
 
 ```

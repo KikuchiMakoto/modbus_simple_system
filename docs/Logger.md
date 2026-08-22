@@ -1,14 +1,16 @@
 # 計測アプリ（modbus_simple_logger）
 
-ブラウザ上で動く Modbus RTU ロガー（SPA / PWA）です。インストール不要で、Chrome / Edge で開くだけで使えます。
+ブラウザ上で動く Modbus RTU ロガーです。インストール不要で、Chrome / Edge で開くだけで使えます。
 
 👉 **https://kikuchimakoto.github.io/modbus_simple_logger/**
+
+> 🔰 ロガー＝計測データを記録するソフト、Modbus RTU＝このシステムで基板とやり取りするときの通信の決まり（→ [ModbusRTU.md](./ModbusRTU.md)）です。今は分からなくても先へ進めます。
 
 ## まず開く
 
 1. Arduino Nano R4 をUSB接続する
-2. 「接続」ボタンからシリアルポート（COMポート）を選ぶ
-3. AI0〜AI15の値がチャートに出れば成功
+2. 「接続」ボタンからシリアルポート（COMポート＝WindowsがUSB機器を見つけたときに割り当てる通信の窓口）を選ぶ
+3. AI0〜AI15の値がグラフに出れば成功
 
 通信設定（スレーブID 1、38400bps、ポーリング100ms）はアプリ側で固定されています。設定で迷うことがない代わりに、相手側（[Modbus RTU](./ModbusRTU.md)・ファームウェア）の仕様と一致している前提で動きます。
 
@@ -38,7 +40,7 @@ Web Serial API などの新しいAPIを使うため、**Chromium系ブラウザ�
 | キャリブレーション | チャネルごとの2次式（a·x²+b·x+c）とワンタッチTare。JSON入出力対応（→ [Calibration.md](./Calibration.md)） |
 | TSV保存 | File System Access API によるストリーミング保存。保存中のクラッシュからも復旧します |
 | ScriptRunner | 内蔵Python（Pyodide）で `GetAiPhy()` / `SetAo()` などを自動実行。Stopはどんなループでも効きます |
-| PWA | インストールすれば完全オフラインで動きます |
+| PWA | ブラウザの「インストール」機能に対応。インストールすればインターネット無し（オフライン）でも動きます |
 
 ## 初心者向けの注意
 

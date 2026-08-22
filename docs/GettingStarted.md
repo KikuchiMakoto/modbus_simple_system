@@ -21,7 +21,7 @@
 
 ## ステップ1：基板発注と電子部品の買い物（modbus_simple_pcb）
 
-**発注する（おすすめ）**：[Releases](https://github.com/KikuchiMakoto/modbus_simple_pcb/releases) の `Gerber.zip` を JLCPCB や PCBWay にアップロードして注文。部品は [Wiki](https://github.com/KikuchiMakoto/modbus_simple_pcb/wiki) のBOMを見て購入し、自分ではんだ付けします。
+**発注する（おすすめ）**：[Releases](https://github.com/KikuchiMakoto/modbus_simple_pcb/releases) の `Gerber.zip`（基板工場向けの製造データ。詳しくは [PCB.md](./PCB.md)）を JLCPCB や PCBWay にアップロードして注文。部品は [Wiki](https://github.com/KikuchiMakoto/modbus_simple_pcb/wiki) のBOM（部品表：型番と個数の一覧）を見て購入し、自分ではんだ付けします。
 
 **設計から確認する**：[KiCAD](https://www.kicad.org/)（無料）で `.kicad_pro` を開きます。
 
@@ -38,9 +38,9 @@ irm "https://raw.githubusercontent.com/KikuchiMakoto/modbus_simple_system/main/s
 やっていること：
 
 1. `winget` で Arduino CLI を導入（あればスキップ）
-2. Nano R4用のボードコアを導入
-3. [最新Release](https://github.com/KikuchiMakoto/modbus_simple_firmware/releases) から `ArduinoNanoR4.bin` を取得
-4. COMポートを検出して書き込み
+2. Nano R4用のボードコア（開発環境の部品）を導入
+3. [最新Release](https://github.com/KikuchiMakoto/modbus_simple_firmware/releases) から `ArduinoNanoR4.bin`（完成済みのファームウェア本体）を取得
+4. COMポート（パソコンがUSB機器に割り当てる通信の窓口）を検出して書き込み
 
 > 🔰 不安なら [スクリプト本体](../scripts/flash-firmware-windows.ps1) を先に読んでください。結果は同じです。
 
@@ -53,7 +53,7 @@ Mac/Linuxや、ソースから書き込む場合は [Arduino IDE](https://www.ar
 👉 **https://kikuchimakoto.github.io/modbus_simple_logger/**
 
 1. Arduino Nano R4 をUSB接続する
-2. 「接続」ボタンからシリアルポートを選ぶ
+2. 「接続」ボタンからシリアルポート（COMポート）を選ぶ
 3. AI0〜AI15の値がグラフに出れば成功
 
 ## ステップ4：使ってみる
@@ -61,7 +61,7 @@ Mac/Linuxや、ソースから書き込む場合は [Arduino IDE](https://www.ar
 | やること | 内容 |
 | --- | --- |
 | **校正** | 生データを N・mm に変換する式を設定（→ [Calibration.md](./Calibration.md)） |
-| **Tare** | ボタン一つでその時点を0点に |
+| **Tare** | ボタン一つでその時点を0点に（風袋引き。テンション試験のセット荷重などを消せる） |
 | **記録** | リアルタイムグラフ＋TSV保存（→ [Logger.md](./Logger.md)） |
 | **自動制御** | 内蔵Python（Pyodide）で `SetAo()` などを実行。**インストール不要** |
 

@@ -47,7 +47,7 @@
 [HX711](./HX711.md)（AI0-7） ／ [ADS1115](./ADS1115.md)（AI8-15） ／ [GP8403](./GP8403.md)（AO0-7） ／ [I2C](./I2C.md)
 
 **つなぐ・守る**
-[AI/AO/DI/DO](./Signals.md) ／ [⚠️ 4〜20mAの受け方](./CurrentLoop.md) ／ [シールドとアース](./Shield.md) ／ [同軸・BNC・50Ω](./Coax.md)
+[AI/AO/DI/DO](./Signals.md) ／ [⚠️ 4〜20mAの受け方](./CurrentLoop.md) ／ [シールド・アースとケーブル](./Shield.md)
 
 **通信**
 [Modbus RTU](./ModbusRTU.md) ／ [USB CDC ACM](./USBCDC.md) ／ [Arduino Nano R4](./ArduinoNanoR4.md) ／ [仕様まとめ](./Specs.md)

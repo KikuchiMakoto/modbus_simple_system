@@ -40,8 +40,15 @@ Web Serial API などの新しいAPIを使うため、**Chromium系ブラウザ�
 | Tutorial | メニュー最上部の初学者案内。ステップ0〜8を必須／推奨／任意バッジ付きで表示、EN/JA切替可（→ 下記「Tutorial」） |
 | キャリブレーション | チャネルごとの2次式（a·x²+b·x+c）とワンタッチTare。JSON入出力対応（→ [Calibration.md](./Calibration.md)） |
 | TSV保存 | File System Access API によるストリーミング保存。保存中のクラッシュからも復旧します |
-| ScriptRunner | 内蔵Python（Pyodide）で `GetAiPhy()` / `SetAo()` などを自動実行。Stopはどんなループでも効きます |
+| ScriptRunner | 内蔵Python（Pyodide）で `GetAiPhy(ch)` / `SetAo(ch, vlt)` などを自動実行。Stopはどんなループでも効きます（→ [ScriptRunner.md](./ScriptRunner.md)） |
 | PWA | ブラウザの「インストール」機能に対応。インストールすればインターネット無し（オフライン）でも動きます |
+
+## ScriptRunnerの単位だけ、ここでも一度
+
+- **ScriptRunner API（`SetAo` / `GetAo`）＝ V単位**（小数可）
+- **Modbusホールディングレジスタ直叩き ＝ mV単位**（10V = `10000`）
+
+この2つは数値が1000倍違います。詳細と注意点は [ScriptRunner.md](./ScriptRunner.md) へ。
 
 ## Tutorial（メニュー最上部の🔰）
 

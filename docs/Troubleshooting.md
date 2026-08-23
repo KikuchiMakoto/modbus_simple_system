@@ -29,6 +29,8 @@
 **ScriptRunnerが動かない**
 
 - API名はPascalCase（`SetAo()`）です。snake_caseでは動きません（→ [Logger.md](./Logger.md)）
+- 待ちは `await asyncio.sleep(s)` だけです。`time.sleep()` を使うとStopも含めて固まります（→ [ScriptRunner.md](./ScriptRunner.md) の「絶対に守るルール」）
+- スクリプトのエラー内容は System Log（メニュー内）に ERROR で出ます。まずそこを確認
 
 ## 値がおかしい
 
@@ -40,6 +42,7 @@
 | 力と逆向きに動く | 信号線の＋−が逆。係数の符号でも直せます |
 | kgやNにならない | 校正がまだ（→ [Calibration.md](./Calibration.md)） |
 | 特定のICだけ読めない | I2Cアドレス重複（→ [I2C.md](./I2C.md)） |
+| 値がたまに飛ぶ・たまに外れる | HX711の読み出し遅延による不定値の疑い。自作スケッチなら is_ready() 確認を（→ [HX711.md](./HX711.md) の「DOUTは…」節） |
 
 ## センサー（ロードセル・変位計）自体が壊れていないか疑うとき
 

@@ -31,7 +31,7 @@
 - **AI16ch / AO8ch** の計測と制御（→ [Signals.md](./Signals.md)）
 - リアルタイムグラフとTSV保存（→ [Logger.md](./Logger.md)）
 - チャネルごとの校正・Tare（→ [Calibration.md](./Calibration.md)）
-- ブラウザ内蔵Pythonで自動制御（追加インストール不要）
+- ブラウザ内蔵Pythonで自動制御（追加インストール不要。→ [ScriptRunner.md](./ScriptRunner.md)）
 
 技術仕様は **[Specs.md](./Specs.md)** に集約しています。
 
@@ -41,7 +41,7 @@
 [はじめてガイド](./GettingStarted.md) ／ [基板・KiCAD・ガーバー](./PCB.md) ／ [Arduino](./Arduino.md) ／ [計測アプリ](./Logger.md) ／ [困ったときは](./Troubleshooting.md)
 
 **測る仕組み**
-[ロードセル](./LoadCell.md) ／ [ひずみゲージとブリッジ](./StrainGauge.md) ／ [DC励起とAC励起](./Excitation.md) ／ [LVDT](./LVDT.md) ／ [キャリブレーション](./Calibration.md)
+[センサー接続早見表](./Sensors.md) ／ [ロードセル](./LoadCell.md) ／ [ひずみゲージとブリッジ](./StrainGauge.md) ／ [DC励起とAC励起](./Excitation.md) ／ [LVDT](./LVDT.md) ／ [キャリブレーション](./Calibration.md)
 
 **基板に載っているIC**
 [HX711](./HX711.md)（AI0-7） ／ [ADS1115](./ADS1115.md)（AI8-15） ／ [GP8403](./GP8403.md)（AO0-7） ／ [I2C](./I2C.md)
@@ -51,6 +51,9 @@
 
 **通信**
 [Modbus RTU](./ModbusRTU.md) ／ [USB CDC ACM](./USBCDC.md) ／ [Arduino Nano R4](./ArduinoNanoR4.md) ／ [仕様まとめ](./Specs.md)
+
+**自動制御・調べる**
+[ScriptRunner（自動制御）](./ScriptRunner.md) ／ [用語集](./Glossary.md)
 
 ## ライセンス
 

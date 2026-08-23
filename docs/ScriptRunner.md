@@ -10,11 +10,13 @@
 | --- | --- | --- |
 | `GetAiRaw()` | 読み取り | AI0〜15の生データ |
 | `GetAiPhy()` | 読み取り | 校正後の物理値 |
-| `GetAo()` | 読み取り | 現在のAO出力値 |
+| `GetAo()` | 読み取り | 現在のAO出力値（**V単位**） |
 | `GetParam()` | 読み取り | Parameterチャネルの値 |
-| `SetAo()` | 書き込み | AO0〜7へmV単位で出力指示 |
+| `SetAo()` | 書き込み | AO0〜7へ**V単位**で出力指示（`SetAo(0, 5.0)` ＝ 5V。小数可） |
 | `SetParam()` | 書き込み | Parameterチャネルへ値を置く |
 | `SetAiTare()` | 書き込み | 指定チャネルのTare実行 |
+
+> ⚠️ **`SetAo()` / `GetAo()` の単位は [V]。** 一方、Modbus RTUのホールディングレジスタを直接読み書きするときの単位は **mV**（`10000` ＝ 10V）です。ScriptRunnerからはAPI経由なので[V]、外部ツールからレジスタ直叩きする場合は[mV]、と覚えてください。
 
 ## 重要な性格：読み取りは同期・書き込みは非同期
 
@@ -25,9 +27,9 @@
 ```python
 import asyncio
 
-await SetAo(0, 5000)        # AO0へ5V指示（非同期：転送はこれから行われる）
+await SetAo(0, 5.0)         # AO0へ5V指示（非同期：転送はこれから行われる）
 await asyncio.sleep(0.2)    # 転送とデバイスの応答を待つ
-v = GetAo()                 # ここでようやく 5000 が読める
+v = GetAo()                 # ここでようやく 5.0 が読める（V単位）
 ```
 
 ## レシピ① ステップ負荷の自動印加
@@ -37,15 +39,15 @@ v = GetAo()                 # ここでようやく 5000 が読める
 ```python
 import asyncio
 
-STEPS = [0, 1000, 2000, 3000, 4000, 5000]   # mV指定（例）
-DWELL = 60.0                                 # 各段の保持時間（秒）
+STEPS = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0]   # V指定
+DWELL = 60.0                              # 各段の保持時間（秒）
 
-for i, mv in enumerate(STEPS):
-    await SetAo(0, mv)                       # AO0に出力
-    print(f"step {i}: {mv} mV")
+for i, v in enumerate(STEPS):
+    await SetAo(0, v)                     # AO0に出力
+    print(f"step {i}: {v} V")
     for t in range(int(DWELL), 0, -10):
         await asyncio.sleep(10)
-        print(GetAiPhy())                    # 保持中も値を見えるように出す
+        print(GetAiPhy())                 # 保持中も値を見えるように出す
 ```
 
 > 🔰 `print()` の出力は System Log に流れます。長時間の実行では「今どの段階か」を出しておくと、後でTSVと突き合わせるのが楽になります。
@@ -57,21 +59,23 @@ for i, mv in enumerate(STEPS):
 ```python
 import asyncio
 
-MAX_MV = 5000
+MAX_V = 5.0
 N_CYCLES = 3
 STEP_DWELL = 30.0
 
 for cycle in range(N_CYCLES):
     # 載荷（0 → MAX を5分割）
-    for mv in range(0, MAX_MV + 1, 1000):
-        await SetAo(0, mv)
+    for i in range(6):
+        v = MAX_V * i / 5
+        await SetAo(0, v)
         await asyncio.sleep(STEP_DWELL)
-        print(f"load c{cycle} {mv}mV: {GetAiPhy()}")
+        print(f"load c{cycle} {v}V: {GetAiPhy()}")
     # 除荷（MAX → 0）。**ここが重要**：戻り値が0点に戻るか見ている
-    for mv in range(MAX_MV, -1, -1000):
-        await SetAo(0, mv)
+    for i in range(5, -1, -1):
+        v = MAX_V * i / 5
+        await SetAo(0, v)
         await asyncio.sleep(STEP_DWELL)
-        print(f"unload c{cycle} {mv}mV: {GetAiPhy()}")
+        print(f"unload c{cycle} {v}V: {GetAiPhy()}")
 ```
 
 除荷終端の値が最初の0点に戻らなければ、塑性変形・座屈などを疑います（→ [Calibration](./Calibration.md) の⚠️）。
@@ -88,8 +92,8 @@ KP = 800.0      # 比例ゲイン（mV/単位ずれ）
 
 while True:
     err = TARGET - GetAiPhy()[0]     # 例：AI0で制御する場合
-    mv = max(0, min(10000, KP * err))
-    await SetAo(0, int(mv))
+    v = max(0.0, min(10.0, KP * err / 1000))   # mV→V換算、0〜10Vにクランプ
+    await SetAo(0, v)
     await asyncio.sleep(1.0)
 ```
 

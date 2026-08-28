@@ -54,22 +54,3 @@
 
 **自動制御・調べる**
 [ScriptRunner（自動制御）](./ScriptRunner.md) ／ [用語集](./Glossary.md)
-
-## ライセンス
-
-本リポジトリ (modbus_simple_system) のドキュメント・図・サンプルスクリプトは
-**MIT License** の下で公開しています。([`LICENSE`](./LICENSE) を参照)
-
-- SPDX: `MIT`
-- Copyright (c) 2025-2026 Makoto KUNO
-
-関連リポジトリのライセンス:
-
-| リポジトリ | 対象 | ライセンス |
-| --- | --- | --- |
-| [modbus_simple_system](https://github.com/KikuchiMakoto/modbus_simple_system) | ドキュメント・図・サンプル | MIT |
-| [modbus_simple_firmware](https://github.com/KikuchiMakoto/modbus_simple_firmware) | Arduino スケッチ (.ino) | MIT |
-| [modbus_simple_logger](https://github.com/KikuchiMakoto/modbus_simple_logger) | ブラウザ計測アプリ | MIT |
-| [modbus_simple_pcb](https://github.com/KikuchiMakoto/modbus_simple_pcb) | KiCad 回路・PCB | CERN-OHL-S-2.0 |
-
-リポジトリをまたいでソースを流用する場合は、各リポジトリの LICENSE を必ず確認してください。

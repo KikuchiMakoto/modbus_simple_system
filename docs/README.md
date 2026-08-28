@@ -1,7 +1,10 @@
 # Modbus Simple System
 
-材料試験向けの、自作 Modbus RTU 計測・制御システムです。
-**アナログ入力16ch・出力8ch**を、ブラウザだけで記録・制御できます。
+材料試験向けの、自作 Modbus RTU 計測・制御システムです。  
+**入力16ch・出力8ch**を、ブラウザだけで記録・制御できます。  
+入力 00-07ch は**ひずみ入力**  
+入力 08-16ch は**電圧入力**  
+出力 00-07ch は**電圧出力** です。 
 
 👉 **[計測アプリを開く](https://kikuchimakoto.github.io/modbus_simple_logger/)**（Chrome / Edge、インストール不要）
 
